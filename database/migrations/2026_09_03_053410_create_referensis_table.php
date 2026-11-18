@@ -14,6 +14,12 @@ return new class extends Migration
         Schema::create('referensis', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->enum('kategori', ['Utama', 'Pendukung']);
+            $table->string('penulis');
+            $table->string('tahun', 4);
+            $table->string('judul');
+            $table->string('penerbit')->nullable();
+            $table->string('url')->nullable();
         });
     }
 

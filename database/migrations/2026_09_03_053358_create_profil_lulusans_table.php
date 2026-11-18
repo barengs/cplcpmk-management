@@ -14,6 +14,10 @@ return new class extends Migration
         Schema::create('profil_lulusans', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('kode_pl')->unique();
+            $table->text('deskripsi');
+            $table->string('kategori')->nullable();
+            $table->text('profesi')->nullable();
         });
     }
 

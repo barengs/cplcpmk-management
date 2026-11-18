@@ -14,6 +14,9 @@ return new class extends Migration
         Schema::create('cpmks', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('kode_cpmk');
+            $table->foreignId('mk_id')->constrained('mata_kuliahs')->onDelete('cascade');
+            $table->text('deskripsi_cpmk');
         });
     }
 

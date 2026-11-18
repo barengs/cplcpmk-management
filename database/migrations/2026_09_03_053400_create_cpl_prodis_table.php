@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('cpl_prodis', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('kode_cpl')->unique();
+            $table->text('deskripsi');
         });
     }
 

@@ -14,6 +14,9 @@ return new class extends Migration
         Schema::create('cpl_sn_diktis', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('kode_cpl_sn')->unique();
+            $table->text('deskripsi');
+            $table->string('kategori');
         });
     }
 

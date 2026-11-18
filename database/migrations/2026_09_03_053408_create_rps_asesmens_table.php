@@ -14,6 +14,11 @@ return new class extends Migration
         Schema::create('rps_asesmens', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->foreignId('rps_mingguan_id')->constrained('rps_mingguans')->onDelete('cascade');
+            $table->text('indikator_penilaian');
+            $table->string('teknik_penilaian');
+            $table->text('kriteria_penilaian')->nullable();
+            $table->decimal('bobot_persen', 5, 2)->default(0);
         });
     }
 

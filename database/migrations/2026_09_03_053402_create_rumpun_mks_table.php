@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('rumpun_mks', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('nama_rumpun');
+            $table->foreignId('koordinator_id')->nullable()->constrained('users')->onDelete('set null');
         });
     }
 

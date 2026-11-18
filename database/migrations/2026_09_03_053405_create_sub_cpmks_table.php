@@ -14,6 +14,10 @@ return new class extends Migration
         Schema::create('sub_cpmks', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('kode_sub_cpmk');
+            $table->foreignId('cpmk_id')->constrained('cpmks')->onDelete('cascade');
+            $table->text('deskripsi_sub_cpmk');
+            $table->string('level_taksonomi')->nullable();
         });
     }
 
